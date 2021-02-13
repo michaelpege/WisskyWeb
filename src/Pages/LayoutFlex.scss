@@ -1,0 +1,33 @@
+@import "../styles/mixin.scss";
+
+.container{
+  @include setup_size(100vw,100vh);
+  @include flex_center(column);
+  &>*{
+    @include setup_size(100%,100%);
+    @include flex_center(row);
+    background-color: #c2c2c2;
+    margin : 5px;
+  }
+  .content > *{
+    @include setup_size(100%,100%);
+    @include flex_center(row);
+    background-color: #c2c2c2;
+    margin : 5px;
+  }
+  .content-center{order : 2;}
+  .content-left{order:1;}
+  .content-right{order:3;}
+}
+
+@media only screen and (max-width: 600px) {
+  .container{
+    .content{
+      flex-direction: column;
+    }
+    .content-left{order : 2; float : left;}
+    .content-right{order : 3; float : right}
+    .content-center{order : 1;}
+  }
+ 
+}

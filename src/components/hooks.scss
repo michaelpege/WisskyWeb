@@ -1,0 +1,30 @@
+@import "../styles/mixin.scss";
+
+h1{
+  text-align: center;
+}
+
+.control{
+  @include flex_center(row);
+  flex-direction: row-reverse;
+  &>*{
+    @include setup_size(10vw, 2vw);
+    @include flex_center(row);
+    background-color: #e5e5e5;
+    margin : 5px;
+    cursor: pointer;
+  }
+}
+
+.hidden{
+  display: none;
+}
+
+.upload-btn{
+  @include setup_size(20vw, 7.5vw);
+  @include flex_center(row);
+  font-size: 2vw;
+  border-radius: 8px;
+  background-color: #e5e5e5;
+  cursor: pointer;
+}

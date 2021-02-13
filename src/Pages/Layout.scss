@@ -1,0 +1,31 @@
+@import "../styles/mixin.scss";
+
+.container-grid{
+  @include setup_size(100vw,100vh);
+  display: grid;
+  grid-template-areas:
+  'header header header'
+  'left center right'
+  'footer footer footer';
+  gap : 5px;
+  .header{grid-area: header;}
+  .content-left{grid-area: left;}
+  .content-center{grid-area: center;}
+  .content-right{grid-area: right;}
+  .footer{grid-area: footer;}
+  
+  &>*{
+    background-color: #c2c2c2;
+    @include flex_center(row);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container-grid{
+    grid-template-areas:
+    'header header'
+    'center center'
+    'left right'
+    'footer footer';
+  }
+}
